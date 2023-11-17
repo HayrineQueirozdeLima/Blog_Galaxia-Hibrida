@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Divs with Links</title>
+    <style>
+        .content {
+            display: none;
+        }
+
+        .active-link {
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#" class="toggle-link" data-target="div1">Toggle Div 1</a>
+    <a href="#" class="toggle-link" data-target="div2">Toggle Div 2</a>
+    <a href="#" class="toggle-link" data-target="div3">Toggle Div 3</a>
+
+    <div id="div1" class="content">Content of Div 1</div>
+    <div id="div2" class="content">Content of Div 2</div>
+    <div id="div3" class="content">Content of Div 3</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".toggle-link").on("click", function (e) {
+                e.preventDefault();
+
+                // Desativa a última div
+                $(".content:visible").hide();
+
+                // Remove a classe ativa de todos os links
+                $(".toggle-link").removeClass("active-link");
+
+                // Obtém o alvo da div a ser exibida
+                var targetDiv = $(this).data("target");
+
+                // Ativa o link atual
+                $(this).addClass("active-link");
+
+                // Exibe a div alvo
+                $("#" + targetDiv).show();
+            });
+        });
+    </script>
+</body>
+</html>
