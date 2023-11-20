@@ -1,5 +1,6 @@
 // ESCONDE E MOSTRA AS DIVS
 $(document).ready(function() {
+    loadStars();
     $(".content").hide(); // Esconde todos os parágrafos
     $(".nav").on("click", function(e) {
         e.preventDefault(); // Evita que o link recarregue a página
@@ -28,20 +29,23 @@ $(document).ready(function() {
         var allElements = document.querySelectorAll(".nav"); //"cata" todos os menus
         for (var i = 0; i < allElements.length; i++) { 
             allElements[i].style.backgroundColor = "";
-            allElements[i].style.color = "rgb(81, 81, 81)";
+            allElements[i].style.color           = "rgb(81, 81, 81)";
         } //remove a cor de fundo de todos os elementos com a classe "nav" antes de definir a cor de fundo do elemento ativo, ao clicar em outro elemento, o ultimo retorna visualmente a estilização
-        var activeElement = document.querySelector(".nav.active");
+        var activeElement                   = document.querySelector(".nav.active");
         activeElement.style.backgroundColor = "#ffbd1f"; //altera a cor de fundo do elemento ativo
-        activeElement.style.color = "white"; //altera a cor do texto do elemento ativo
+        activeElement.style.color           = "white"; //altera a cor do texto do elemento ativo
     });
 
-    $(window).on("resize", function() {
+    $(window).on("resize", loadStars());
+
+    function loadStars() {
+        $("div.stars").css("height", `${window.innerHeight}px`)
+        var star  = 1;
         var stars = `<span style="--i:${star}"></span>\n`;
-        var star = 1;
-        for(var i = 0; i <= window.innerWidth; i+=3){
-            star = Math.floor(Math.random() * 20);
-            stars.append(`<span style="--i:${star}"></span>\n`);
+        for(var i = 0; i <= window.innerWidth; i+= 5){
+            star   = Math.floor(Math.random() * 20);
+            stars += (`<span style="--i:${star}"></span>\n`);
         }
         $("div.stars").html(stars);
-    });
+    }
 });

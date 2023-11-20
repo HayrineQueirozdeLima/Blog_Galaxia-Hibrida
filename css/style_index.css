@@ -51,10 +51,16 @@ body{
 
 .header_layout{
     width: 100%;
-    border-right: 300px solid transparent;
-    border-top: 600px solid #ffbd1f;
+    border-right: 200px solid transparent;
+    border-top: 400px solid #ffbd1f;
     clip-path: polygon(0 0, 100% 0, 0 100%);
 }
+
+/* #logo {
+    src: local("img/Galaxia_Hibrida_Logo-removebg-preview.png");
+    width: 70%;
+    height: 70%;
+} */
 
 .container{
     /* transform: translateY(-50%); */
