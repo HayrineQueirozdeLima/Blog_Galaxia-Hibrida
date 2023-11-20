@@ -1,5 +1,6 @@
 // ESCONDE E MOSTRA AS DIVS
 $(document).ready(function() {
+    $(".content").hide(); // Esconde todos os parágrafos
     $(".nav").on("click", function(e) {
         e.preventDefault(); // Evita que o link recarregue a página
         var targetDiv = $(this).attr("id"); // Índice do link clicado
@@ -15,12 +16,11 @@ $(document).ready(function() {
                 break;
             case "nav_materiais":
                 $("#content_materiais").show();
-                break;
-            case "nav_eventos":
-                $("#content_eventos").show();
+                $("#content_materiais p").css("display", "block");
                 break;
             case "nav_sobre":
                 $("#content_sobre").show();
+                $("#content_sobre p").css("display", "block");
                 break;
         }
         $(".nav").removeClass("active"); // Remove a classe "active" de todos os links
@@ -33,5 +33,15 @@ $(document).ready(function() {
         var activeElement = document.querySelector(".nav.active");
         activeElement.style.backgroundColor = "#ffbd1f"; //altera a cor de fundo do elemento ativo
         activeElement.style.color = "white"; //altera a cor do texto do elemento ativo
+    });
+
+    $(window).on("resize", function() {
+        var stars = `<span style="--i:${star}"></span>\n`;
+        var star = 1;
+        for(var i = 0; i <= window.innerWidth; i+=3){
+            star = Math.floor(Math.random() * 20);
+            stars.append(`<span style="--i:${star}"></span>\n`);
+        }
+        $("div.stars").html(stars);
     });
 });
