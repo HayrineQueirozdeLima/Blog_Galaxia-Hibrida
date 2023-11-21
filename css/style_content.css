@@ -1,12 +1,123 @@
 /* MENU BLOG */
-
 .box_post{
     padding: 8px;
     display: flex;
     margin-bottom: 10px;
-    border: 1px inset rgb(53, 53, 53) ;
+    /* border: 1px inset rgb(53, 53, 53) ; */
     border-radius: 8px;
-    -webkit-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
-    -moz-box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
-    box-shadow: 0px 3px 5px 0px rgba(184,175,184,1);
+    box-shadow: 3px 7px 10px 0px rgba(184,175,184,1);
+}
+
+.img_box_post img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.img_box_post{
+    /* display: flex; */
+    width: 70px;
+    height: 70px;
+}
+
+.box_post_content{
+    padding-left: 15px;
+}
+
+.title_post{
+    text-decoration: none;
+    color: black;
+}
+
+.title_post:hover{
+    color: #ffbd1f;
+}
+
+.post_description{
+    color: rgb(65, 65, 65);
+    font-weight: lighter;
+    text-align: justify;
+}
+
+/* MENU MATERIAIS */
+.box{
+    margin: 4%;
+    text-align: center;
+    padding: 5%;
+    max-height: max-content;
+    border-bottom: 1px solid #a880ff;
+}
+
+.img img{
+    width: 150px;
+    height: 150px;
+}
+
+.nome_dica h2{
+    color: #80ddff;
+    font-size: 28px;
+}
+
+.list{
+    text-align: justify;
+    font-size: 18px;
+} 
+
+.list p{
+    text-align: center;
+}
+
+.list ul li{
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+.list ul li span{
+    font-size: 21px;
+    font-weight: bolder;
+    color: #fff080;
+}
+
+#ref_icone{
+    text-align: center;
+    font-size: 12px;
+}
+
+#ref_icone a{
+    text-decoration: none;
+}
+
+/* MENU SOBRE NÓS */
+
+.profile_card{
+    margin: 12px;
+    padding: 10px 15px;
+    text-align: justify;
+    border-radius: 10px;
+    background-color: #ffbd1f;
+    color: white;
+    width: 180px;
+    max-height: max-content;
+}
+
+.photo_profile{
+    width: 100%;
+    height: 180px;
+    /* border: 2px solid #f4ff80; */
+    border-radius: 100%;
+}
+
+.name_profile{
+    padding: 4px;
+    font-size: 22px;
+    text-align: center;
+    border-left: 1.9px solid #ffbd1f;
+    border-right: 1.9px solid #ffbd1f;
+    border-radius: 5px;
+}
+
+.description_profile{
+    font-weight: normal;
+    font-size: 15px;
+    text-align: center;
 }
