@@ -17,6 +17,7 @@
 .img_box_post{
     /* display: flex; */
     width: 70px;
+    min-width: 70px;
     height: 70px;
 }
 
@@ -35,6 +36,7 @@
 
 .post_description{
     color: rgb(65, 65, 65);
+    font-size: 13px;
     font-weight: lighter;
     text-align: justify;
 }
@@ -45,7 +47,7 @@
     text-align: center;
     padding: 5%;
     max-height: max-content;
-    border-bottom: 1px solid #a880ff;
+    border-bottom: 1px solid #fff080;
 }
 
 .img img{
@@ -54,7 +56,7 @@
 }
 
 .nome_dica h2{
-    color: #80ddff;
+    color: black;
     font-size: 28px;
 }
 
@@ -75,7 +77,7 @@
 .list ul li span{
     font-size: 21px;
     font-weight: bolder;
-    color: #fff080;
+    color: #ffbd1f;
 }
 
 #ref_icone{
@@ -89,30 +91,80 @@
 
 /* MENU SOBRE NÓS */
 
-.profile_card{
+#content_sobre{
+    height: max-content;
+}
+
+.cards{
+    display: flex;
+    /*justify-content: center;
+    transform-style: preserve-3d;
+    transition: all .9s; */
+    /* perspective: 700px;
+    display: flex; */
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* .profile_card, .card_back{
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+} */
+
+.profile_card, .card_back{
     margin: 12px;
     padding: 10px 15px;
     text-align: justify;
     border-radius: 10px;
-    background-color: #ffbd1f;
-    color: white;
-    width: 180px;
+    width: 200px;
     max-height: max-content;
 }
 
-.photo_profile{
+.profile_card{
+    color: #34322d;
+    background-color: #ecdaae;
+    /* transform: rotateY(180deg); */
+}
+
+.card_back{
+    /* transform: rotateY(-180deg);
+    backface-visibility: hidden; */
+    /* background-color: #a3750c;
+    color: rgb(54, 54, 54); */
+}
+
+/* .flip{
+    transform: rotateY(180deg);
+} */
+
+/* .cards:hover .profile_card{
+    transform: rotateY(180deg);
+    z-index: 0;
+} */
+
+/* .cards:hover .card_back{
+    transform: rotateY(0);
+    z-index: 1;
+} */
+
+.photo_profile img{
     width: 100%;
-    height: 180px;
+    height: 160px;
     /* border: 2px solid #f4ff80; */
     border-radius: 100%;
 }
 
 .name_profile{
+    font-weight: bolder;
     padding: 4px;
     font-size: 22px;
     text-align: center;
-    border-left: 1.9px solid #ffbd1f;
-    border-right: 1.9px solid #ffbd1f;
+    color: rgb(82, 82, 82);
+    border-left: 1.9px solid rgb(82, 82, 82);
+    border-right: 1.9px solid rgb(82, 82, 82);
     border-radius: 5px;
 }
 

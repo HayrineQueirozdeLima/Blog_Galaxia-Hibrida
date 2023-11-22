@@ -22,6 +22,7 @@ $(document).ready(function() {
             case "nav_sobre":
                 $("#content_sobre").show();
                 $("#content_sobre p").css("display", "block");
+                $("#mensagemSucesso").css("display", "none");
                 break;
         }
         $(".nav").removeClass("active"); // Remove a classe "active" de todos os links
@@ -34,6 +35,29 @@ $(document).ready(function() {
         var activeElement                   = document.querySelector(".nav.active");
         activeElement.style.backgroundColor = "#ffbd1f"; //altera a cor de fundo do elemento ativo
         activeElement.style.color           = "white"; //altera a cor do texto do elemento ativo
+    });
+
+    $("#mensagem").on("focus", function(){
+        if($("#mensagem").val() == "(opicional)"){
+            $("#mensagem").val("");
+        }
+    });
+
+    $("#mensagem").on("focusout", function(){
+        if($("#mensagem").val() == ""){
+            $("#mensagem").val("(opicional)");
+        }
+    });
+
+    $("#btn_enviar").on("click", function(){
+        if($("#mensagem").val() == "" || $("#email").val() == ""){
+            alert("Por favor, preencha todos os campos obrigatórios");
+        } else{
+            $("#mensagemSucesso").fadeIn(1500);
+            setTimeout(function(){
+                $("#mensagemSucesso").fadeOut(1500);
+            }, 5000)
+        }
     });
 
     $(window).on("resize", loadStars());
