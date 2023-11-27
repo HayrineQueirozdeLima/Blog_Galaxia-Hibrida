@@ -1,6 +1,21 @@
-// ESCONDE E MOSTRA AS DIVS
 $(document).ready(function() {
     loadStars();
+
+    // ESTRELAS DE FUNDO
+    $(window).on("resize", loadStars);
+
+    function loadStars() {
+        $("div.stars").css("height", `${window.innerHeight}px`)
+        var star  = 1;
+        var stars = `<span style="--i:${star}"></span>\n`;
+        for(var i = 0; i <= window.innerWidth; i+= 5){
+            star   = Math.floor(Math.random() * 20);
+            stars += (`<span style="--i:${star}"></span>\n`);
+        }
+        $("div.stars").html(stars);
+    }
+
+    // ESCONDE E MOSTRA AS DIVS
     $(".content").hide(); // Esconde todos os parágrafos
     $(".nav").on("click", function(e) {
         e.preventDefault(); // Evita que o link recarregue a página
@@ -60,16 +75,8 @@ $(document).ready(function() {
         }
     });
 
-    $(window).on("resize", loadStars());
-
-    function loadStars() {
-        $("div.stars").css("height", `${window.innerHeight}px`)
-        var star  = 1;
-        var stars = `<span style="--i:${star}"></span>\n`;
-        for(var i = 0; i <= window.innerWidth; i+= 5){
-            star   = Math.floor(Math.random() * 20);
-            stars += (`<span style="--i:${star}"></span>\n`);
-        }
-        $("div.stars").html(stars);
-    }
+    // EFEITO FLIP PARA O CONTEÚDO DO MENU SOBRE NÓS
+    $(".flip-container").click(function() {
+        $(this).toggleClass("flip");
+    });
 });

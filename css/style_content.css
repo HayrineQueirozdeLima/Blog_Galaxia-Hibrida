@@ -91,69 +91,65 @@
 
 /* MENU SOBRE NÓS */
 
-#content_sobre{
-    height: max-content;
-}
-
-.cards{
+.container_cards {
     display: flex;
-    /*justify-content: center;
-    transform-style: preserve-3d;
-    transition: all .9s; */
-    /* perspective: 700px;
-    display: flex; */
     justify-content: space-around;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
 }
 
-/* .profile_card, .card_back{
-    align-items: center;
-    position: absolute;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-} */
+.flip-container {
+    /* position: relative; */
+    perspective: 1000px;
+    width: 260px;
+    height: 500px;
+    margin: 0px;
+}
 
-.profile_card, .card_back{
+.flipper {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    position: absolute;
+    backface-visibility: hidden;
+    height: max-content;
+    width: 100%;
     margin: 12px;
-    padding: 10px 15px;
+    padding: 15px 20px;
     text-align: justify;
     border-radius: 10px;
-    width: 200px;
-    max-height: max-content;
 }
 
-.profile_card{
-    color: #34322d;
-    background-color: #ecdaae;
-    /* transform: rotateY(180deg); */
+.front{
+    background-color: #f3dca7;
+    line-height: 1.5em;
+
 }
 
-.card_back{
-    /* transform: rotateY(-180deg);
-    backface-visibility: hidden; */
-    /* background-color: #a3750c;
-    color: rgb(54, 54, 54); */
-}
-
-/* .flip{
+.back {
     transform: rotateY(180deg);
-} */
 
-/* .cards:hover .profile_card{
+    background-color: #ffbd1f;
+    color: white;
+    font-weight: bolder;
+    font-size: small;
+    text-align: center;
+    line-height: 1.5em;
+    padding: 30px;
+}
+
+.flip-container:hover .flipper {
     transform: rotateY(180deg);
-    z-index: 0;
-} */
+}
 
-/* .cards:hover .card_back{
-    transform: rotateY(0);
-    z-index: 1;
-} */
 
 .photo_profile img{
     width: 100%;
-    height: 160px;
-    /* border: 2px solid #f4ff80; */
+    height: 200px;
+    border: 1px solid white;
     border-radius: 100%;
 }
 
@@ -169,6 +165,7 @@
 }
 
 .description_profile{
+    margin-top: 20px;
     font-weight: normal;
     font-size: 15px;
     text-align: center;
