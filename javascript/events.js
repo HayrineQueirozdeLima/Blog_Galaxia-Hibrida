@@ -52,20 +52,8 @@ $(document).ready(function() {
         activeElement.style.color           = "white"; //altera a cor do texto do elemento ativo
     });
 
-    $("#mensagem").on("focus", function(){
-        if($("#mensagem").val() == "(opicional)"){
-            $("#mensagem").val("");
-        }
-    });
-
-    $("#mensagem").on("focusout", function(){
-        if($("#mensagem").val() == ""){
-            $("#mensagem").val("(opicional)");
-        }
-    });
-
     $("#btn_enviar").on("click", function(){
-        if($("#mensagem").val() == "" || $("#email").val() == ""){
+        if($("#mensagem").val() == "" || $("#email").val() == "" || $("#mensagem").val() == ""){
             alert("Por favor, preencha todos os campos obrigatórios");
         } else{
             $("#mensagemSucesso").fadeIn(1500);
@@ -73,6 +61,20 @@ $(document).ready(function() {
                 $("#mensagemSucesso").fadeOut(1500);
             }, 5000)
         }
+    });
+
+    $(".box_post").on("click", function(e){
+        var targetDiv = $(this).attr("id"); // Índice do link clicado
+        $("#content_blog").hide(); // Esconde todos os parágrafos
+        $.getJSON("obj/teste.json", function(json){
+            $.each(json, function(){
+                if(json.id == targetDiv){
+                    $("#content_blog").show();
+                    $("#content_blog").html(json.header + json.html);
+                    $("#content_blog p").css("display", "block");
+                }
+            });
+        });
     });
 
     // EFEITO FLIP PARA O CONTEÚDO DO MENU SOBRE NÓS
