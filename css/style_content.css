@@ -1,6 +1,6 @@
 /* MENU BLOG */
 .box_post{
-    padding: 8px;
+    padding: 8px 15px;
     display: flex;
     margin-bottom: 10px;
     /* border: 1px inset rgb(53, 53, 53) ; */
@@ -39,6 +39,36 @@
     font-size: 13px;
     font-weight: lighter;
     text-align: justify;
+}
+
+.post_content{
+    font-size:14px;
+    padding: 15px;
+}
+
+.post_content p{
+    margin-bottom: 15px;
+}
+
+.post_content figure img{
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+}
+
+#img_principal img, #img_10 img{
+    width: 90%;
+}
+
+.img:not(#img_principal, #img_10){
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.post_content figcaption{
+    font-size: x-small;
+    text-align: center;
 }
 
 /* MENU MATERIAIS */
@@ -121,6 +151,7 @@
     padding: 15px 20px;
     text-align: justify;
     border-radius: 10px;
+    box-shadow: -4px 3px 15px 3px rgb(199, 198, 198)
 }
 
 .front{
