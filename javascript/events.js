@@ -5,7 +5,6 @@ $(document).ready(function() {
     $(window).on("resize", loadStars);
 
     function loadStars() {
-        $("div.stars").css("height", `${window.innerHeight}px`)
         var star  = 1;
         var stars = `<span style="--i:${star}"></span>\n`;
         for(var i = 0; i <= window.innerWidth; i+= 5){

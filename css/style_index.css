@@ -13,8 +13,8 @@ body{
 }
 
 .stars{
-    position: absolute;
-    display: flex;
+    position: fixed;
+    display:flex;
 }
 
 .stars span{
