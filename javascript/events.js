@@ -53,14 +53,14 @@ $(document).ready(function() {
     });
 
     $("#mensagem").on("focus", function(){
-        if($("#mensagem").val() == "(opicional)"){
+        if($("#mensagem").val() == "(opcional)"){
             $("#mensagem").val("");
         }
     });
 
     $("#mensagem").on("focusout", function(){
         if($("#mensagem").val() == ""){
-            $("#mensagem").val("(opicional)");
+            $("#mensagem").val("(opcional)");
         }
     });
 
