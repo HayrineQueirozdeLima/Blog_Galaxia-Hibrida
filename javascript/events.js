@@ -15,6 +15,15 @@ $(document).ready(function() {
         $("div.stars").html(stars);
     }
 
+    $(".box_post").on("click", function(e){
+        e.preventDefault(); // Evita que o link recarregue a página
+        var targetPost = $(this).attr("id");
+        $(`.box_post_content .post_content`).css("display", "none");
+        $(`.box_post_content .post_description`).show();
+        $(`#${targetPost} .box_post_content .post_description`).hide();
+        $(`#${targetPost} .box_post_content .post_content`).css("display", "block");
+    })
+
     // ESCONDE E MOSTRA AS DIVS
     $(".content").hide(); // Esconde todos os parágrafos
     $(".nav").on("click", function(e) {
